@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="dynamic-title">Secret Sauce Manifesto!</title>
+    <link rel="icon" href="fevicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="fevicon.png" type="image/x-icon">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .image-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: fill; /* Ensures the image covers the screen without distortion */
+        }
+    </style>
+</head>
+<body>
+    <div class="image-container">
+        <a href="https://www.goalsguy.com/wisdom/shop/secret-sauce/" target="_self">
+            <picture>
+                <!-- Mobile view image -->
+                <source srcset="mobile12.jpg" media="(max-width: 912px)">
+                <!-- Default image for desktop -->
+                <img src="panel12.jpg" alt="Responsive Fullscreen Image">
+            </picture>
+        </a>
+    </div>
+    <script>
+        const titles = ["Goal Setting Tools", "That Drive Results!"];
+        let currentTitleIndex = 0;
+
+        function changeTitle() {
+            currentTitleIndex = (currentTitleIndex + 1) % titles.length; // Cycle through titles
+            document.getElementById("dynamic-title").textContent = titles[currentTitleIndex]; // Change the page title
+        }
+
+        // Change title every 4 seconds
+        setInterval(changeTitle, 4000);
+    </script>
+</body>
+</html>
